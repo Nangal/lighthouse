@@ -95,12 +95,12 @@ URL.getDisplayName = function getDisplayName(url) {
 };
 
 // There is fancy URL rewriting logic for the chrome://settings page that we need to work around.
-// Why? It was to be able to swap from chrome://settings to chrome://extensions with a JavaScript 
+// Why? It was to be able to swap from chrome://settings to chrome://extensions with a JavaScript
 // pushState call without forcing a page reload. :)
 // As a result, the final document URL doesn't match the URL that network layer surfaces.
-function rewriteChromeInternalUrl(url){
+function rewriteChromeInternalUrl(url) {
   if (!url.startsWith('chrome://')) return url;
-  return url.replace(/^chrome:\/\/chrome\//,'chrome://');
+  return url.replace(/^chrome:\/\/chrome\//, 'chrome://');
 }
 
 /**

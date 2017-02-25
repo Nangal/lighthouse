@@ -111,5 +111,13 @@ describe('URL Shim', () => {
       ];
       unequalPairs.forEach(pair => assert.ok(!URL.equalWithExcludedFragments(...pair)));
     });
+
+    it('rewrites chrome://settings urls', () => {
+      const pair = [
+        'chrome://settings/',
+        'chrome://chrome/settings/',
+      ];
+      assert.ok(URL.equalWithExcludedFragments(...pair));
+    });
   });
 });
