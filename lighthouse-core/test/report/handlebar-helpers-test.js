@@ -46,8 +46,8 @@ describe('Handlebar helpers', () => {
   it('`getAggregationScoreRating` calculates rating', () => {
     assert.equal(handlebarHelpers.getAggregationScoreRating(undefined), 'poor');
     assert.equal(handlebarHelpers.getAggregationScoreRating(1), 'good');
-    assert.equal(handlebarHelpers.getAggregationScoreRating(0.95), 'poor');
-    assert.equal(handlebarHelpers.getAggregationScoreRating(0.50), 'poor');
+    assert.equal(handlebarHelpers.getAggregationScoreRating(0.95), 'good');
+    assert.equal(handlebarHelpers.getAggregationScoreRating(0.50), 'average');
     assert.equal(handlebarHelpers.getAggregationScoreRating(0.10), 'poor');
   });
 });
